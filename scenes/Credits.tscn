@@ -1,0 +1,121 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/Menu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/Credits.gd" type="Script" id=2]
+[ext_resource path="res://assets/back.png" type="Texture" id=3]
+[ext_resource path="res://assets/back_hover.png" type="Texture" id=4]
+[ext_resource path="res://fonts/MrDafoe-Regular.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 96
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+font_data = ExtResource( 5 )
+
+[node name="CreditsMenu" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="TitleLabel" parent="Control" index="0"]
+text = "Credits"
+
+[node name="BackButton" type="TextureButton" parent="Control" index="1"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 87.5521
+margin_top = -253.574
+margin_right = 201.552
+margin_bottom = -113.574
+hint_tooltip = "Back"
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control" index="2"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 152.655
+margin_top = 170.513
+margin_right = 360.655
+margin_bottom = 305.513
+custom_fonts/font = SubResource( 1 )
+text = "Fonts:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Control" index="3"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 888.99
+margin_top = 697.905
+margin_right = 1160.99
+margin_bottom = 832.905
+custom_fonts/font = SubResource( 1 )
+text = "Sounds:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Control" index="4"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 644.294
+margin_top = 479.043
+margin_right = 874.294
+margin_bottom = 614.043
+custom_fonts/font = SubResource( 1 )
+text = "Music:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="Control" index="5"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 102.79
+margin_top = 317.267
+margin_right = 1359.79
+margin_bottom = 407.267
+custom_fonts/font = SubResource( 2 )
+text = "\"Mr Dafoe\" - Alejandro Paul (sudtipos@sudtipos.com)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="Control" index="6"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 102.79
+margin_top = 395.267
+margin_right = 1393.79
+margin_bottom = 485.267
+custom_fonts/font = SubResource( 2 )
+text = "\"mayqueen\" - [ Divide By Zero ] imightbetm(a)aol.com"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Control" index="7"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 337.371
+margin_top = 601.836
+margin_right = 1184.37
+margin_bottom = 691.836
+custom_fonts/font = SubResource( 2 )
+text = "\"Orchestra Loop\" - Brandon Morris"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label7" type="Label" parent="Control" index="8"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 571.639
+margin_top = 821.839
+margin_right = 1426.64
+margin_bottom = 911.839
+custom_fonts/font = SubResource( 2 )
+text = "Voiceover Pack - https://kenney.nl/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Control/BackButton" to="." method="_on_BackButton_pressed"]

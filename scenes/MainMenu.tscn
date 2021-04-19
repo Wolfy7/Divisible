@@ -1,0 +1,78 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/btn_credits.png" type="Texture" id=1]
+[ext_resource path="res://assets/btn_credits_focused.png" type="Texture" id=2]
+[ext_resource path="res://assets/btn_credits_hover.png" type="Texture" id=3]
+[ext_resource path="res://scenes/Menu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/MainMenu.gd" type="Script" id=5]
+[ext_resource path="res://assets/head_bg_less.png" type="Texture" id=6]
+[ext_resource path="res://assets/btn_endless_mode.png" type="Texture" id=7]
+[ext_resource path="res://assets/seven.png" type="Texture" id=8]
+[ext_resource path="res://assets/btn_equation_mode_disabled.png" type="Texture" id=10]
+[ext_resource path="res://assets/btn_endless_mode_hover.png" type="Texture" id=11]
+[ext_resource path="res://assets/btn_equation_mode_hover.png" type="Texture" id=12]
+[ext_resource path="res://assets/btn_equation_mode.png" type="Texture" id=13]
+[ext_resource path="res://assets/btn_endless_mode_selected.png" type="Texture" id=14]
+
+[node name="MainMenu" instance=ExtResource( 4 )]
+script = ExtResource( 5 )
+
+[node name="seven" type="Sprite" parent="Control" index="0"]
+position = Vector2( 1341.3, 935.058 )
+rotation = -0.619912
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 8 )
+
+[node name="head_bg_less" type="Sprite" parent="Control" index="1"]
+position = Vector2( 81.9011, 131.375 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 6 )
+
+[node name="TitleLabel" parent="Control" index="2"]
+text = "Divisible"
+
+[node name="EndlessButton" type="TextureButton" parent="Control" index="3"]
+margin_left = 393.162
+margin_top = 324.735
+margin_right = 1383.16
+margin_bottom = 544.735
+rect_scale = Vector2( 0.8, 0.8 )
+texture_normal = ExtResource( 7 )
+texture_hover = ExtResource( 11 )
+texture_focused = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EquationButton" type="TextureButton" parent="Control" index="4"]
+margin_left = 410.822
+margin_top = 553.601
+margin_right = 1370.82
+margin_bottom = 773.601
+rect_scale = Vector2( 0.8, 0.8 )
+disabled = true
+texture_normal = ExtResource( 13 )
+texture_hover = ExtResource( 12 )
+texture_disabled = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsButton" type="TextureButton" parent="Control" index="5"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -200.081
+margin_top = -243.714
+margin_right = 353.919
+margin_bottom = -63.7143
+rect_scale = Vector2( 0.8, 0.8 )
+texture_normal = ExtResource( 1 )
+texture_hover = ExtResource( 3 )
+texture_focused = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Control/EndlessButton" to="." method="_on_EndlessButton_pressed"]
+[connection signal="pressed" from="Control/CreditsButton" to="." method="_on_CreditsButton_pressed"]
